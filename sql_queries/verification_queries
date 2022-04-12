@@ -1,0 +1,217 @@
+REQUETES DE VERIFICATION : 
+
+1. Montrer qu il existe bien 5 cinémas dans la base de données cinema : 
+
+SELECT *
+FROM Cinemas; 
+
+
+Montrer qu il est possible de réserver dans un des 5 cinémas: 
+
+- Le client n°1 Eugène Delacroix a réservé (réservation n°1) 2 places au plein tarif dans le cinéma UGC Normandie salle n°1 pour voir le film n°1 à l’horaire n°2:
+
+SELECT DISTINCT cl.prenom_client, cl.nom_client, r.id_reservation, q.quantite, q.nom_tarif, c.nom_cinema, q.id_salle, q.id_film, q.id_horaire
+FROM Clients AS cl
+JOIN Reservations AS r
+ON cl.id_client = r.id_client 
+JOIN Quantites AS q
+ON r.id_reservation = q.id_reservation
+JOIN Quantites_places AS qp 
+ON q.id_salle  = qp.id_salle
+JOIN Places AS p
+ON q.id_cinema = p.id_cinema 
+JOIN Cinemas AS c 
+ON p.id_cinema = c.id_cinema 
+WHERE r.id_reservation = 1; 
+
+
+- Le client n°5 Vincent Van Gogh a réservé (réservation n°5) 1 place au plein tarif, 2 places au tarif étudiant et 2 places au tarif moins de 14 ans dans le cinéma n°5 Le Bretagne salle n°3  pour voir le film n°2 à l’horaire n°1: 
+
+SELECT DISTINCT cl.prenom_client, cl.nom_client, r.id_reservation, q.quantite, q.nom_tarif, c.nom_cinema, q.id_salle, q.id_film, q.id_horaire
+FROM Clients AS cl
+JOIN Reservations AS r
+ON cl.id_client = r.id_client 
+JOIN Quantites AS q
+ON r.id_reservation = q.id_reservation
+JOIN Quantites_places AS qp 
+ON q.id_salle  = qp.id_salle
+JOIN Places AS p
+ON q.id_cinema = p.id_cinema 
+JOIN Cinemas AS c 
+ON p.id_cinema = c.id_cinema 
+WHERE r.id_reservation = 5; 
+
+
+
+2. Montrer que le même film peut être diffusé au même horaire dans le même cinéma mais dans plusieurs salles différentes : 
+
+- Le film n° 1 Aristocrats est projeté le 4.04.2022 de 17:30 à 19:30 dans le même cinéma n°2, le Gaumont Parnasse, mais dans 2 salles différentes : la salle Parnasse-1 et la salle Parnasse-3 : 
+
+SELECT f.titre_film, h.heure_debut, h.heure_fin, s.nom_salle, c.nom_cinema
+FROM Films AS f
+JOIN Horaires_films AS hf 
+ON f.id_film = hf.id_film 
+JOIN Horaires AS h
+ON hf.id_horaire  = h.id_horaire  
+JOIN Quantites AS q
+ON q.id_film  = hf.id_film 
+JOIN Salles AS s  
+ON q.id_salle = s.id_salle
+JOIN Cinemas as c 
+ON s.id_cinema  = c.id_cinema 
+WHERE c.id_cinema = 2
+AND f.id_film = 1
+AND h.id_horaire = 2;
+
+
+- Le film n° 1 Aristocrats est également projeté le 4.04.2022 mais à un horaire différent cette fois, de 19:30 à 21:30, dans le même cinéma n°2, le Gaumont Parnasse, dans 2 salles différentes : la salle Parnasse-1 et la salle Parnasse-3 : 
+
+SELECT f.titre_film, h.heure_debut, h.heure_fin, s.nom_salle, c.nom_cinema
+FROM Films AS f
+JOIN Horaires_films AS hf 
+ON f.id_film = hf.id_film 
+JOIN Horaires AS h
+ON hf.id_horaire  = h.id_horaire  
+JOIN Quantites AS q
+ON q.id_film  = hf.id_film 
+JOIN Salles AS s  
+ON q.id_salle = s.id_salle
+JOIN Cinemas as c 
+ON s.id_cinema  = c.id_cinema 
+WHERE c.id_cinema = 2
+AND f.id_film = 1
+AND h.id_horaire = 4;
+
+
+
+3. Montrer que le client peut choisir sa place : 
+
+- La réservation n°2 du client Gustave Moreau pour aller voir le film n°1 à l horaire n°4 dans la salle n°3 du cinéma n°4 montre qu il a choisi 2 places, les places n°1 et 2 :
+
+SELECT cl.nom_client, cl.prenom_client, r.id_reservation, q.quantite, qp.id_place, qp.id_film, qp.id_horaire, s.nom_salle, c.nom_cinema 
+FROM Clients AS cl
+INNER JOIN Reservations AS r
+ON cl.id_client = r.id_client 
+INNER JOIN Quantites AS q
+ON r.id_reservation = q.id_reservation 
+INNER JOIN Quantites_places AS qp
+ON q.id_reservation = qp.id_reservation 
+INNER JOIN Salles AS s 
+ON qp.id_salle = s.id_salle 
+INNER JOIN Cinemas AS c 
+ON s.id_cinema = c.id_cinema 
+WHERE c.id_cinema = 4
+AND s.id_salle = 3;
+
+
+- Pour faire attention au nombre de places disponibles, j’ai tapé une requête comprenant une condition pour montrer que la réservation de place n’est possible que si la somme de la quantité de places déjà réservées est inférieure au nombre de places disponibles dans une salle de cinéma. 
+
+Par exemple j’ai affiché le total de places déjà réservées pour savoir s’il est possible de faire une réservation pour voir le film n°1 à l’horaire n°4 projeté dans la salle n°3 du cinéma n° 5:
+
+SELECT 
+	SUM(quantite) AS total_places_deja_reservees,
+	CASE
+		WHEN SUM(q.quantite) <= MAX(s.nombrePlaces_salle) THEN 'Réservation possible'
+		ELSE 'Réservation impossible, salle complète'
+	END
+FROM Quantites AS q
+JOIN Salles AS s 
+ON q.id_salle = s.id_salle 
+WHERE s.id_cinema = 5
+AND s.id_salle = 3
+AND q.id_film = 1
+AND q.id_horaire = 4;
+
+
+ou bien, 4 places ont déjà été réservées pour voir le film n°2 à l horaire n°6 dans la salle n°1 du cinéma n° 4, la réservation est donc possible : 
+
+SELECT 
+	SUM(quantite) AS total_places_deja_reservees,
+	CASE
+		WHEN SUM(q.quantite) <= MAX(s.nombrePlaces_salle) THEN 'Réservation possible'
+		ELSE 'Réservation impossible, salle complète'
+	END
+FROM Quantites AS q
+JOIN Salles AS s 
+ON q.id_salle = s.id_salle 
+WHERE s.id_cinema = 4
+AND s.id_salle = 1
+AND q.id_film = 2
+AND q.id_horaire = 6;
+
+
+
+4. Montrer qu il existe bien 3 tarifs : 
+
+- 3 tarifs existent dans une table Tarifs :
+
+SELECT * FROM Tarifs;
+
+
+- Le client Paul Cézanne avec la réservation n°6 a réservé plusieurs places aux 3 tarifs différents pour la même séance de cinéma par exemple: 
+
+SELECT DISTINCT cl.prenom_client, cl.nom_client, r.id_reservation, q.quantite, q.nom_tarif, c.nom_cinema, q.id_salle, q.id_film, q.id_horaire
+FROM Clients AS cl
+JOIN Reservations AS r
+ON cl.id_client = r.id_client 
+JOIN Quantites AS q
+ON r.id_reservation = q.id_reservation
+JOIN Quantites_places AS qp 
+ON q.id_salle  = qp.id_salle
+JOIN Places AS p
+ON q.id_cinema = p.id_cinema 
+JOIN Cinemas AS c 
+ON p.id_cinema = c.id_cinema 
+WHERE r.id_reservation = 6; 
+
+
+
+5. Montrer que le paiement se fait sur place en attribuant à chaque client une facture liée à une ou plusieurs réservations : 
+
+- Le client Paul Cézanne qui a la réservation n°6 et la facture n°6 devra régler la somme totale de 30,30 € par exemple puisque sa réservation comprend 1 place à 9,20 € + 2 places à 7,60 € + 1 place à 5, 90 € soit un total de 30,30 € : 
+
+SELECT cl.nom_client, cl.prenom_client, r.id_reservation, f.id_facture, f.montant_facture, q.quantite, t.nom_tarif, t.prix_tarif
+FROM Clients cl
+INNER JOIN Reservations r 
+ON r.id_client = cl.id_client 
+INNER JOIN Factures f 
+ON f.id_facture = r.id_facture 
+INNER JOIN Quantites q 
+ON q.id_reservation = r.id_reservation 
+INNER JOIN Tarifs t 
+ON t.nom_tarif = q.nom_tarif 
+WHERE r.id_reservation = 6;
+
+
+
+6. Montrer qu un administrateur par cinéma peut ajouter des séances. 
+
+- Afficher le mot de passe de l admin: 
+
+SELECT cl.id_client, cl.nom_client, cl.motpasse_client, a.motpasse_admin
+FROM Clients AS cl
+JOIN Admins a 
+ON a.id_client = cl.id_client 
+WHERE cl.isAdmin = 1;
+
+
+- Un admin différent est rattaché à un cinéma: 
+
+SELECT c.id_cinema, c.nom_cinema, cl.id_client, cl.nom_client
+FROM Clients cl
+INNER JOIN Cinemas c 
+ON cl.id_client = c.id_client 
+
+
+L administrateur n°3 théodore Géricault a programmé le film n°1 à deux horaires différents (de 19:30 à 22:3à et de 22:30 à 00:30) dans deux salles différentes, salles 3 et 4, mais dans le même cinéma n°5 :
+
+SELECT p.id_client, cl.nom_client, cl.prenom_client, p.id_film, p.id_horaire, p.id_salle, p.id_cinema
+FROM Programmations p
+INNER JOIN Clients cl
+ON cl.id_client = p.id_client 
+WHERE p.id_client = 3;
+
+
+
+
+
