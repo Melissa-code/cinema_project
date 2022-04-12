@@ -1,0 +1,353 @@
+CLIENTS :  
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Delacroix', 'Eugene', '6 Rue de Furstemberg 75006 Paris', 'delacroix@gmail.com', '$2y$10$vEx3REIRj.omkixkE2IMruhroKKA0Lzz/xtL6fFQQ.9irK55DaLsK', 1);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Moreau', 'Gustave', '14 Rue Catherine de La Rochefoucauld 75009 Paris', 'moreau@hotmail.com', '$2y$10$YbXLnPthaF.yjsWZXAnno.q.HU7AQcJP86Q0NxiAtebiPo93ijVlK', 0);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Gericault', 'Theodore', 'Rue de Rivoli 75001 Paris', 'gericault@yahoo.fr', '$2y$10$ClqJp6rOm3NehGNxaZbU5eOhZfCJQabcsFpQUWqw5xRk7sQxL9xHO', 1);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Monet', 'Claude', '2 Rue Louis Boilly 75016 Paris', 'monet@gmail.com', '$2y$10$wbiuoUtEJ8FYUYjaG.x5Qe1NGX0VaU61XFqFxOh9LFqvqIwHu2qbS', 1);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Van Gogh', 'Vincent', '52 Rue du Général de Gaulle 95430 Auvers-sur-Oise', 'vangogh@gmail.com', '$2y$10$OErjVwZeJLjNLyYh4l2m9eRJYLGGoKpXwVvl9COtW4EM8NQw0DJ8y', 0);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Cezanne', 'Paul', '9 Avenue Paul Cézanne 13100 Aix-en-Provence', 'cezanne@gmail.com', '$2y$10$7hGEtxVUDb.UWSdq8HkW.O7wMskSi9tZmPEMujzDxjPPOYCsluuu2', 1);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Pissarro', 'Camille', '17 Rue du Chateau 95300 Pontoise', 'pissarro@gmail.com', '$2y$10$8hGEtxVUDb.VWSdq8HkW.O7wMskSi9tZmPEMujzDxjPPOYCsluua3', 0);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Courbet', 'Gustave', '1 Place Robert Fernier 25290 Ornans','courbet@gmail.com', '$2y$10$7hGEtxVUza.UWSdq8HkW.O7wMskSi9tZmPEMujzDxjPPOYCsluuw1', 0);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Braque', 'Georges', 'Place Georges-Pompidou 75004 Paris','braque@gmail.com', '$2y$10$OErjVwArJLjNLyYh4l2m9eRJYLGGoKpXwVvl9COtW4EM8NQw0DJ6t', 0);
+
+INSERT INTO Clients (nom_client, prenom_client, adresse_client, email_client, motpasse_client, isAdmin) VALUES ('Matisse', 'Henri', 'Place du Commandant Edouard Richez 59360 Le Cateau-Cambrésis','$2y$10$wbiuoUtEJ7FYUYjbT.x5Qe1NGX0VaU61XFqFxOh9LFqvqIwHu3raZ', 'lajoiedevivre', 1);
+
+
+
+ADMINS : 
+
+INSERT INTO Admins (id_client, motpasse_admin) VALUES (1, '$2y$10$YbXLnLjhuO.yjsWZXOjhe.q.JH7AQcLP67Q0NxiAtebiPo93ijVLM');
+INSERT INTO Admins (id_client, motpasse_admin) VALUES (3, '$2y$10$FmqKl5rTm3GigDFxeZbU5eFtZfCJQabcsFpQUWqw5xRk7sQxR2xQS');
+INSERT INTO Admins (id_client, motpasse_admin) VALUES (4, 'OErjVwZeJLlALyRh4l2m9eRJYLGGoKpXwVvl1COtP2AZ7BNo0KJ9h');
+INSERT INTO Admins (id_client, motpasse_admin) VALUES (6, '$2y$10$7hGEtxVITb.UWSdq9okW.O2wMskSi9tZmSDFumzDxERPFQCsltfd5');
+INSERT INTO Admins (id_client, motpasse_admin) VALUES (10, '$2y$10$wbiuoUtEJ7ERYYjvR.x7Qe1NGX0VaU55XFqFxOh4DFqvqPlGu3qxP');
+
+
+
+CINEMAS : 
+
+INSERT INTO Cinemas (id_cinema, nom_cinema, adresse_cinema, id_client) VALUES (1, 'UGC Normandie', '116 bis avenue des Champs-Elysees 75008 Paris', 1);
+
+INSERT INTO Cinemas (id_cinema, nom_cinema, adresse_cinema, id_client) VALUES (2, 'Gaumont Parnasse', '3 Rue d Odessa 75014 Paris', 6);
+
+INSERT INTO Cinemas (id_cinema, nom_cinema, adresse_cinema, id_client) VALUES (3, 'Le Bretage', '73 Bd du Montparnasse 75006 Paris', 4);
+
+INSERT INTO Cinemas (id_cinema, nom_cinema, adresse_cinema, id_client) VALUES (4, 'Le Louxor', '170 Bd de Magenta 75010 Paris', 10);
+
+INSERT INTO Cinemas (id_cinema, nom_cinema, adresse_cinema, id_client) VALUES (5, 'Le Grand Rex', '1 Bd Poissonnière 75002 Paris', 3);
+
+
+
+SALLES : 
+
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (1, 'Le Grand Normandie 1', 862, 1); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (2, 'Le Grand Normandie 2', 274, 1); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (3, 'Le Grand Normandie 3', 246, 1); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (4, 'Le Petit Normandie 4', 151, 1); 
+
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (1, 'Parnasse-1', 400, 2); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (2, 'Parnasse-2', 300, 2); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (3, 'Parnasse-3', 300, 2); 
+
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (1, 'Bretagne 1', 500, 3); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (2, 'Bretagne 2', 165, 3); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (3, 'Bretagne 3', 60, 3); 
+
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (1, 'Louxor 1', 342, 4); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (2, 'Louxor 2', 140, 4); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (3, 'Louxor 3', 74, 4); 
+
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (1, 'GrandRex 1', 2800, 5); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (2, 'GrandRex 2', 500, 5); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (3, 'GrandRex 3', 238, 5); 
+INSERT INTO Salles (id_salle, nom_salle, nombrePlaces_salle, id_cinema) VALUES (4, 'GrandRex 4', 122, 5); 
+
+
+
+PLACES : 
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 1, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 1, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 1, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 1, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 1, 1);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 2, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 2, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 2, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 2, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 2, 1);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 3, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 3, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 3, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 3, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 3, 1);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 4, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 4, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 4, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 4, 1);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 4, 1);
+
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 1, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 1, 2);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 2, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 2, 2);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 3, 2);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 3, 2);
+
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 1, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 1, 3);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 2, 3);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 2, 3);
+
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 1, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 1, 4);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 2, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 2, 4);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 3, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 3, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 3, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 3, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 3, 4);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 3, 4);
+
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 1, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 1, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 1, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 1, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 1, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 1, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 1, 5);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 2, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 2, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 2, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 2, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 2, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 2, 5);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 3, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 3, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 3, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 3, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 3, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 3, 5);
+
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (1, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (2, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (3, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (4, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (5, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (6, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (7, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (8, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (9, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (10, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (11, 4, 5);
+INSERT INTO Places (id_place, id_salle, id_cinema) VALUES (12, 4, 5);
+
+
+
+FILMS :
+
+INSERT INTO Films (id_film, titre_film) VALUES (1, 'Aristocrats');
+INSERT INTO Films (id_film, titre_film) VALUES (2, 'Batman');
+INSERT INTO Films (id_film, titre_film) VALUES (3, 'Les Secrets de Dumbledor');
+INSERT INTO Films (id_film, titre_film) VALUES (4, 'Morbius');
+INSERT INTO Films (id_film, titre_film) VALUES (5, 'En Corps');
+INSERT INTO Films (id_film, titre_film) VALUES (6, 'Sonic 2');
+INSERT INTO Films (id_film, titre_film) VALUES (7, 'Inexorable');
+
+
+
+HORAIRES :
+
+INSERT INTO Horaires (id_horaire, heure_debut, heure_fin) VALUES (1, '2022-04-04 17:15:00', '2022-04-04 19:15:00');
+INSERT INTO Horaires (id_horaire, heure_debut, heure_fin) VALUES (2, '2022-04-04 17:30:00', '2022-04-04 19:30:00');
+INSERT INTO Horaires (id_horaire, heure_debut, heure_fin) VALUES (3, '2022-04-04 19:15:00', '2022-04-04 21:15:00');
+INSERT INTO Horaires (id_horaire, heure_debut, heure_fin) VALUES (4, '2022-04-04 19:30:00', '2022-04-04 21:30:00');
+INSERT INTO Horaires (id_horaire, heure_debut, heure_fin) VALUES (5, '2022-04-04 22:15:00', '2022-04-05 00:15:00');
+INSERT INTO Horaires (id_horaire, heure_debut, heure_fin) VALUES (6, '2022-04-04 22:30:00', '2022-04-05 00:30:00');
+
+
+
+HORAIRES_FILMS : 
+
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (1, 2);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (1, 4);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (1, 6);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (2, 1);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (2, 3);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (2, 6);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (3, 2);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (4, 1);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (4, 3);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (5, 1);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (5, 4);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (6, 3);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (6, 5);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (7, 1);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (7, 3);
+INSERT INTO Horaires_films (id_film, id_horaire) VALUES (7, 5);
+
+
+
+PROGRAMMATIONS : 
+
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client) VALUES (1, 1, 1, 2, 1);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client)  VALUES (1, 2, 1, 2, 1);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client)  VALUES (2, 2, 4, 3, 6);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client)  VALUES (3, 2, 2, 1, 4);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client) VALUES (3, 3, 2, 1, 4);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client)  VALUES (4, 1, 2, 6, 10);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client) VALUES (5, 3, 1, 4, 3);
+INSERT INTO Programmations (id_cinema, id_salle, id_film, id_horaire, id_client)  VALUES (5, 4, 1, 6, 3);
+
+
+
+FACTURES : 
+
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (2*9.20), 1);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (2*9.20), 2);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20), 3);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20 + 2*7.60), 4);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20 + 2*7.60 + 2*5.90), 5);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20 + 2*7.60 + 1*5.90), 6);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20 + 1*7.60 + 1*5.90), 7);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20 + 2*7.60 + 3*5.90), 8);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (4*9.20 + 1*7.60), 9);
+INSERT INTO Factures (date_facture, montant_facture, id_client) VALUES (CURRENT_TIMESTAMP, (1*9.20 + 2*7.60), 10);
+
+
+
+RESERVATIONS : 
+
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 1, 1);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 2, 2);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 3, 3);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 4, 4);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 5, 5);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 6, 6);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 7, 7);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 8, 8);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 9, 9);
+INSERT INTO Reservations (date_reservation, id_facture, id_client) VALUES (CURRENT_TIMESTAMP, 10, 10);
+
+
+
+TARIFS : 
+
+INSERT INTO Tarifs (nom_tarif, prix_tarif) VALUES ('plein tarif', 9.20);
+INSERT INTO Tarifs (nom_tarif, prix_tarif) VALUES ('tarif etudiant', 7.60);
+INSERT INTO Tarifs (nom_tarif, prix_tarif) VALUES ('tarif moins de 14 ans', 5.90);
+
+
+
+QUANTITES :
+
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('plein tarif', 1, 2, 1, 1, 1, 2);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('plein tarif', 1, 4, 5, 3, 2, 2);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('plein tarif', 1, 6, 5, 4, 3, 1);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle,  id_reservation, quantite) VALUES ('plein tarif', 2, 1, 3, 2, 4, 1);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('plein tarif', 2, 1, 3, 3, 5, 1);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('plein tarif', 2, 6, 4, 1, 6, 1);
+
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('tarif etudiant', 2, 1, 3, 2, 4, 2);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('tarif etudiant', 2, 1, 3, 3, 5, 2);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('tarif etudiant', 2, 6, 4, 1, 6, 2);
+
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('tarif moins de 14 ans', 2, 1, 3, 3, 5, 2);
+INSERT INTO Quantites (nom_tarif, id_film, id_horaire, id_cinema, id_salle, id_reservation, quantite) VALUES ('tarif moins de 14 ans', 2, 6, 4, 1, 6, 1);
+
+
+
+QUANTITES_PLACES : 
+
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema, id_reservation, id_place) VALUES ('plein tarif', 1, 2, 1, 1, 1, 1);
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema, id_reservation, id_place) VALUES ('plein tarif', 1, 2, 1, 1, 1, 2);
+
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema, id_reservation, id_place) VALUES ('plein tarif', 1, 4, 3, 5, 2, 1);
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema, id_reservation, id_place) VALUES ('plein tarif', 1, 4, 3, 5, 2, 2);
+
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema, id_reservation, id_place) VALUES ('plein tarif', 2, 6, 1, 4, 6, 3);
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema,  id_reservation, id_place) VALUES ('tarif etudiant', 2, 6, 1, 4, 6, 7);
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema,  id_reservation, id_place) VALUES ('tarif etudiant', 2, 6, 1, 4, 6, 8);
+INSERT INTO Quantites_places (nom_tarif, id_film, id_horaire, id_salle, id_cinema,  id_reservation, id_place) VALUES ('tarif moins de 14 ans', 2, 6, 1, 4, 6, 5);
+
+
+
