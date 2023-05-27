@@ -6,14 +6,14 @@ Cinema project is a school project : model a database for a future cinema bookin
 
 ## Table of Contents
 1. [General Info](#general-info)
-2. [Build with](#build_with)
+2. [Build with](#build-with)
 3. [Installation](#installation)
 4. [Run](#run)
 5. [Create a user](#create-a-user)
 6. [Create tables](#create-tables)
 7. [Insert data](#insert-data)
 8. [Verifications](#verifications)
-9. [Back up](#backup)
+9. [Backup](#backup)
 10. [Restore](#restore)
 11. [Author](#author)
 12. [License](#license)
@@ -129,7 +129,7 @@ To check if the model and the data are correct, use the SQL queries of the sql_q
 
 ***
 
-## Back up
+## Backup
 
 Export the database with mysqldump. It is installed with the installation of MariaDB : 
 
