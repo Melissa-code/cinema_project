@@ -4,6 +4,7 @@ Cinema project is a school project : model a database for a future cinema bookin
 
 ***
 
+
 ## Table of Contents
 1. [General Info](#general-info)
 2. [Build with](#build-with)
@@ -20,11 +21,15 @@ Cinema project is a school project : model a database for a future cinema bookin
 
 ***
 
+
 ## General Info
 
-At first create the model of the database using the MERISE method (MCD MLD MPD). Then, create the database using the database management system MariaDB. 
+At first, create the model of the database using the MERISE method (MCD MLD MPD). 
+
+Then, create the database using the database management system MariaDB. 
 
 ***
+
 
 ## Build with 
 
@@ -34,12 +39,14 @@ At first create the model of the database using the MERISE method (MCD MLD MPD).
 
 ***
 
+
 ## Prerequisite
 
 * [Homebrew](https://brew.sh/index_fr)
 * [MAMP](https://www.mamp.info/en/downloads/)
 
 ***
+
 
 ## Installation
 
@@ -50,6 +57,7 @@ Open a terminal and use :
 `$ brew install mariadb`
 
 ***
+
 
 ## Run
 
@@ -69,47 +77,49 @@ Connect to the database :
 
 Create the database : 
 
-`CREATE DATABASE cinema;`
+`$ CREATE DATABASE cinema;`
 
 Check if the database is created : 
 
-`SHOW DATABASES;`
+`$ SHOW DATABASES;`
 
 ***
+
 
 ## Create a user
 
 Create a new user (for instance username) with a new password :
 
-`CREATE USER username@localhost IDENTIFIED BY 'username';`
+`$ CREATE USER username@localhost IDENTIFIED BY 'username';`
 
 Check if the user is created :
 
-`SELECT user,host FROM mysql.user;`
+`$ SELECT user,host FROM mysql.user;`
 
 Allow the rights for this user (here are all rights for the CRUD): 
 
-`GRANT ALL PRIVILEGES ON cinema.* TO username@localhost;`
+`$ GRANT ALL PRIVILEGES ON cinema.* TO username@localhost;`
 
 Check the rights of the user :
 
-`SHOW GRANTS FOR username@localhost;`
+`$ SHOW GRANTS FOR username@localhost;`
 
 Log out : 
 
-`quit;`
+`$ quit;`
 
 Log in as username : 
 
-`mysql -u username -p` 
+`$ mysql -u username -p` 
 
 Enter your password
 
 Choose the database :
 
-`USE cinema;`
+`$ USE cinema;`
 
 ***
+
 
 ## Create tables 
 
@@ -117,11 +127,13 @@ To create the tables in the database, use the SQL scripts of the sql_queries/cre
 
 ***
 
+
 ## Insert data 
 
 To insert data in these tables, use the SQL scripts of the sql_queries/cinsert_into file. 
 
 ***
+
 
 ## Verifications 
 
@@ -129,57 +141,61 @@ To check if the model and the data are correct, use the SQL queries of the sql_q
 
 ***
 
+
 ## Backup
 
 Export the database with mysqldump. It is installed with the installation of MariaDB : 
 
-`mysqldump -u username -p cinema > cinema_export.sql` 
+`$ mysqldump -u username -p cinema > cinema_export.sql` 
 
 Enter the password
 
 The file is in the current folder. To see it, use : 
 
-`cat cinema_export.sql`
+`$ cat cinema_export.sql`
 
 Copy the back up in the project : 
 
-`cp cinema_export.sql path/to/Copy/cinema_project`
+`$ cp cinema_export.sql path/to/copy/cinema_project`
 
 ***
+
 
 ## Restore
 
 Create a new database : 
 
-`CREATE DATABASE cinema2;`
+`$ CREATE DATABASE cinema2;`
 
 Allow all rights to the user :
 
-`GRANT ALL PRIVILEGES ON cinema2.* TO username@localhost;`
+`$ GRANT ALL PRIVILEGES ON cinema2.* TO username@localhost;`
 
 Quit :
 
-`quit;`
+`$ quit;`
 
 To import the database, use : 
 
-`mysql -u username -p cinema2 < cinema_export.sql`
+`$ mysql -u username -p cinema2 < cinema_export.sql`
 
 To check the database, use:
 
-`USE cinema2;`
+`$ USE cinema2;`
 
-`SHOW TABLES;`
+`$ SHOW TABLES;`
 
-`DESCRIBE Clients;`
+`$ DESCRIBE Clients;`
 
 ***
+
 
 ## Author 
 
 Melissa-code
 
 ***
+
 
 ## License 
 
